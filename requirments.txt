@@ -1,0 +1,4 @@
+sanic
+sanic_cors
+firebase-admin
+mongoengine
