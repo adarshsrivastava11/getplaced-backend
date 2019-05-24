@@ -5,13 +5,16 @@ import datetime
 import json 
 import firebase_admin
 from firebase_admin import credentials
+import os
 
 from mongoengine import connect
 
 
 from models.user_management import loggedInUser
 
-cred = credentials.Certificate('../getplaced-backend.json')
+dirname = os.path.dirname(__file__)
+filename = os.path.join(dirname, '../getplaced-backend.json')
+cred = credentials.Certificate(filename)
 default_app = firebase_admin.initialize_app(cred)
 
 app = Sanic()
